@@ -340,7 +340,8 @@ public  class TextFigure
 	public void read(StorableInput dr) throws IOException {
 		super.read(dr);
 		markDirty();
-		basicDisplayBox(new Point(dr.readInt(), dr.readInt()), null);
+		fOriginX = dr.readInt();
+		fOriginY = dr.readInt();
 		setText(dr.readString());
 		fFont = new Font(dr.readString(), dr.readInt(), dr.readInt());
 		fIsReadOnly = dr.readBoolean();
